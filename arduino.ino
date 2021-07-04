@@ -39,9 +39,11 @@ void setup() {
   pinMode(green_pin,OUTPUT);
   digitalWrite(red_pin,LOW);
   digitalWrite(blue_pin,HIGH);
+  
 }
 
 void loop() {
+  
   int res;
   //불꽃 센서로 불꽃 인식했을 떄 2초동안 부저가 울리고 10초 주기마다 불꽃을 인식하여 반복(부저시간때문에 8초)
   //current_time=millis(); //화염
