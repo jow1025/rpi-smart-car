@@ -29,21 +29,18 @@ while True:
 		"temp":temp,
 		"humid":humid
 	}
-
-	#dust sensor
 	db.child("data_a").child("1-set").set(dust)
 	db.child("data_a").child("2-push").push(dust)
-	#gas sensor
+
 	db.child("data_b").child("1-set").set(gas)
 	db.child("data_b").child("2-push").push(gas)
-	#dht11 sensor
+
 	db.child("data_c").child("1-set").set(temp)
 	db.child("data_c").child("2-push").push(temp)
-	#dht11 sensor
+
 	db.child("data_d").child("1-set").set(humid)
 	db.child("data_d").child("2-push").push(humid)
 	
-	#console printing log
 	print(dust)
 	print(gas)
 	print(temp)
