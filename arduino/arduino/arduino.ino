@@ -40,7 +40,6 @@ void setup() {
   digitalWrite(red_pin,LOW);
   digitalWrite(blue_pin,HIGH);
 }
-
 void loop() {
   int res;
   //불꽃 센서로 불꽃 인식했을 떄 2초동안 부저가 울리고 10초 주기마다 불꽃을 인식하여 반복(부저시간때문에 8초)
@@ -59,8 +58,7 @@ void loop() {
     }
     
  //10초마다 가스 데이터를 라즈베리파이로 넘김. 10초로 설정되어있음
-  if ((millis()-starttime) > sampletime_ms)//if the sampel time == 30s
-  {
+  if ((millis()-starttime) > sampletime_ms){//if the sampel time == 30s
     ratio = lowpulseoccupancy/(sampletime_ms*10.0); // Integer percentage 0=>100
     concentration = 1.1*pow(ratio,3)-3.8*pow(ratio,2)+520*ratio+0.62; // using spec sheet curve
         ugm3 = concentration*100/13000;
@@ -77,7 +75,6 @@ void loop() {
     if(ugm3>=30){
       digitalWrite(blue_pin,0);
       digitalWrite(red_pin,1);
-      
     }
     else if(ugm3<30){
       digitalWrite(red_pin,0);
