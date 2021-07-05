@@ -40,7 +40,8 @@ while True:
 
 	db.child("data_d").child("1-set").set(humid)
 	db.child("data_d").child("2-push").push(humid)
-	
+
+	#priting log
 	print(dust)
 	print(gas)
 	print(temp)
