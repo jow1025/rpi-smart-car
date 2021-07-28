@@ -13,6 +13,7 @@ config={
 firebase=pyrebase.initialize_app(config)
 db=firebase.database()
 while True:
+	#ESP32를 사용하지 않기 때문에 시리얼로 받기위해 문자열로 slicing 해야함
 	q=ser.readline()
 	val=ser.readline().strip()
 	val=val.decode()
@@ -33,12 +34,15 @@ while True:
 	#dust sensor
 	db.child("data_a").child("1-set").set(dust)
 	db.child("data_a").child("2-push").push(dust)
+
 	#gas sensor
 	db.child("data_b").child("1-set").set(gas)
 	db.child("data_b").child("2-push").push(gas)
+
 	#dht11 sensor
 	db.child("data_c").child("1-set").set(temp)
 	db.child("data_c").child("2-push").push(temp)
+
 	#dht11 sensor
 	db.child("data_d").child("1-set").set(humid)
 	db.child("data_d").child("2-push").push(humid)
