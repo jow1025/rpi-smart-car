@@ -5,8 +5,8 @@
 Flask 웹서버를 이용하여 안드로이드 앱에서 원격제어/자율제어가 가능하며 Firebase Storage에 저장된 사진을 조회할 수 있습니다.
 또한 Realtime DB에 저장되어있는 데이터를 MPAndroidChart를 사용하여 실시간 그래프로 시각화하여 표현했습니다.
 
-<br>
- <h3> 하드웨어(보드)
+
+- <h3> 하드웨어(보드)
  1. Raspberry pi 3B
  2. Arduino nano v3
  3. PWM/Servo Hat
